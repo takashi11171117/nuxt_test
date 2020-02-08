@@ -1,8 +1,17 @@
 <template>
   <div>
-    <h2>{{ formattedMoney }}</h2>
-    <input v-model="delta" type="number">
-    <button @click="add">Add</button>
+    <div>
+      <h2>{{ formattedMoney }}</h2>
+      <input v-model="delta" type="number">
+      <button @click="add">
+        Add
+      </button>
+    </div>
+    <div>
+      <n-link to="/composition_vuex">
+        composition_vuex
+      </n-link>
+    </div>
   </div>
 </template>
 
