@@ -11,6 +11,9 @@
       <n-link to="/composition_vuex">
         composition_vuex
       </n-link>
+      <n-link to="/repository">
+        repository
+      </n-link>
     </div>
   </div>
 </template>
