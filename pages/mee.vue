@@ -1,0 +1,33 @@
+<template>
+  <div id="status">
+    <ul>
+      <li v-for="user in users.data" :key="user.id">
+        {{ user.id }}
+        {{ user.name }}
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import {
+  createComponent,
+  onMounted,
+  ref
+} from '@vue/composition-api'
+import usersRepository from '~/repositories/mee_api/usersRepository.js'
+
+export default createComponent({
+  setup (props, { root }) {
+    const users = ref({})
+
+    onMounted(async () => {
+      users.value = (await usersRepository.get()).data
+    })
+
+    return {
+      users
+    }
+  }
+})
+</script>

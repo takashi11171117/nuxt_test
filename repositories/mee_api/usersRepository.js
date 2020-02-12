@@ -1,11 +1,11 @@
 import Repository from './Repository'
 
-const resource = '/posts'
+const resource = '/users'
 export default {
   get () {
     return Repository.get(`${resource}`)
   },
-  getPost (postId) {
-    return Repository.get(`${resource}/${postId}`)
+  getPost (userId) {
+    return Repository.get(`${resource}/${userId}`)
   }
 }

@@ -14,6 +14,9 @@
       <n-link to="/repository">
         repository
       </n-link>
+      <n-link to="/mee">
+        mee
+      </n-link>
     </div>
   </div>
 </template>
