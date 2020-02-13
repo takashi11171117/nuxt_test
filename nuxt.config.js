@@ -49,6 +49,8 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    host: 'localhost',
+    port: 9100
   },
   /*
   ** Build configuration
