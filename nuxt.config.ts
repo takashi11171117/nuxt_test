@@ -1,5 +1,6 @@
+import { Configuration } from '@nuxt/types'
 
-export default {
+const nuxtConfig: Configuration = {
   mode: 'spa',
   /*
   ** Headers of the page
@@ -35,6 +36,7 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxt/typescript-build',
     '@nuxtjs/eslint-module'
   ],
   /*
@@ -42,7 +44,8 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Axios module configuration
@@ -52,14 +55,40 @@ export default {
     host: 'localhost',
     port: 9100
   },
+  vuetify: {
+    theme: {
+      dark: false,
+      primary: '#3f51b5',
+      secondary: '#b0bec5',
+      accent: '#8c9eff',
+      error: '#b71c1c'
+    }
+  },
+  typescript: {
+    typeCheck: true,
+    ignoreNotFoundWarnings: true
+  },
+  sassOptions: {
+    indentedSyntax: true
+  },
   /*
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
+    extend (config: any, ctx: any) {
+      if (ctx.isDev && ctx.isClient) {
+        if (!config.module) {
+          return
+        } // undefinedの場合、pushせずにreturnするように追加
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
     }
   }
 }
+
+module.exports = nuxtConfig

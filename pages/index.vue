@@ -17,11 +17,15 @@
       <n-link to="/mee">
         mee
       </n-link>
+      <n-link to="/login">
+        login
+      </n-link>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import 'vuetify/dist/vuetify.min.css'
 import { ref, computed, watch, onMounted } from '@vue/composition-api'
 
 export default {

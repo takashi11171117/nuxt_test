@@ -1,6 +1,6 @@
 import Repository from './Repository'
 
-const resource = '/users'
+const resource = '/userlists'
 export default {
   get () {
     return Repository.get(`${resource}`)
