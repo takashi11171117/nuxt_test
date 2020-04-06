@@ -6,34 +6,37 @@ export const state = () => ({
 })
 
 export const getters = {
-  getStatus (state) {
+  getStatus(state) {
     return state.status
   },
-  getVersion (state) {
+  getVersion(state) {
     return state.version
   }
 }
 
 export const mutations = {
-  setStatus (state, status) {
+  setStatus(state, status) {
     state.status = status
   },
-  setVersion (state, version) {
+  setVersion(state, version) {
     state.version = version
   }
 }
 
 export const actions = {
-  async fetchServerInfo ({ commit }) {
+  async fetchServerInfo({ commit }) {
     console.log('iiiii')
-    await this.$axios.get(`${backendURL}status`).then((response) => {
-      console.log(response)
-      commit('setStatus', response.data.status)
-      commit('setVersion', response.data.version)
-    }).catch((err) => {
-      console.log(err)
-      commit('setStatus', 'error')
-      commit('setVersion', 'error')
-    })
+    await this.$axios
+      .get(`${backendURL}status`)
+      .then((response) => {
+        console.log(response)
+        commit('setStatus', response.data.status)
+        commit('setVersion', response.data.version)
+      })
+      .catch((err) => {
+        console.log(err)
+        commit('setStatus', 'error')
+        commit('setVersion', 'error')
+      })
   }
 }

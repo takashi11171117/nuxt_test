@@ -1,15 +1,8 @@
 <template>
   <v-app>
     <div style="width: 440px; margin: 30px;">
-      <v-form
-        ref="form"
-        name="valid"
-      >
-        <v-text-field
-          name="name"
-          required
-          outlined
-        />
+      <v-form ref="form" name="valid">
+        <v-text-field name="name" required outlined />
 
         <v-text-field
           name="password"
@@ -19,10 +12,7 @@
           depressed
         />
 
-        <v-btn
-          depressed
-          color="error"
-        >
+        <v-btn depressed color="error">
           ログイン
         </v-btn>
         <v-btn color="success">
@@ -44,12 +34,7 @@
 
 <script>
 import 'vuetify/dist/vuetify.min.css'
-import {
-  createComponent
-} from '@vue/composition-api'
+import { createComponent } from '@vue/composition-api'
 
-export default createComponent({
-  setup (props, { root }) {
-  }
-})
+export default createComponent()
 </script>

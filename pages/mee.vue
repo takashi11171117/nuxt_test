@@ -10,15 +10,12 @@
 </template>
 
 <script>
-import {
-  createComponent,
-  onMounted,
-  ref
-} from '@vue/composition-api'
+import { createComponent, onMounted, ref } from '@vue/composition-api'
 import usersRepository from '~/repositories/mee_api/usersRepository.js'
 
 export default createComponent({
-  setup (props, { root }) {
+  setup(props, { root }) {
+    console.log(props, root)
     const users = ref({})
 
     onMounted(async () => {

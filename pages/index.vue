@@ -2,7 +2,7 @@
   <div>
     <div>
       <h2>{{ formattedMoney }}</h2>
-      <input v-model="delta" type="number">
+      <input v-model="delta" type="number" />
       <button @click="add">
         Add
       </button>
@@ -29,7 +29,7 @@ import 'vuetify/dist/vuetify.min.css'
 import { ref, computed, watch, onMounted } from '@vue/composition-api'
 
 export default {
-  setup () {
+  setup() {
     // State
     const money = ref(10)
     const delta = ref(1)

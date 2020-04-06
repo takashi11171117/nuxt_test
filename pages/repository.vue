@@ -6,15 +6,12 @@
 </template>
 
 <script>
-import {
-  ref,
-  onMounted,
-  createComponent
-} from '@vue/composition-api'
+import { ref, onMounted, createComponent } from '@vue/composition-api'
 import postsRepository from '~/repositories/sample_api/postsRepository.js'
 
 export default createComponent({
-  setup (props, { root }) {
+  setup(props, { root }) {
+    console.log(props, root)
     const posts = ref({})
 
     onMounted(async () => {
