@@ -20,6 +20,9 @@
       <n-link to="/login">
         login
       </n-link>
+      <n-link to="/sample">
+        sample
+      </n-link>
     </div>
   </div>
 </template>
