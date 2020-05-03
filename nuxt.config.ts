@@ -43,6 +43,7 @@ const nuxtConfig: Configuration = {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/dotenv',
     '@nuxtjs/axios',
     '@nuxtjs/vuetify'
   ],
@@ -85,11 +86,11 @@ const nuxtConfig: Configuration = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
-        config.module.rules.push({
-          test: /\.(vert|frag)$/i,
-          use: ['raw-loader']
-        })
       }
+      config.module.rules.push({
+        test: /\.(vert|frag)$/i,
+        use: ['raw-loader']
+      })
     }
   }
 }

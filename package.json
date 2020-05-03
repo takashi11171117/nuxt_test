@@ -10,13 +10,16 @@
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
-    "test": "jest"
+    "test": "jest",
+    "deploy:development": "sh ./sh/env_development.sh && yarn build && firebase deploy --only hosting",
+    "deploy:production": "sh ./sh/env_production.sh && yarn build && firebase deploy --only hosting"
   },
   "dependencies": {
     "@1amageek/ballcap": "^1.2.3",
     "@nuxt/typescript-runtime": "^0.3.10",
     "@nuxtjs/auth": "^4.8.5",
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/vuetify": "^1.11.0",
     "@vue/composition-api": "^0.3.4",
     "core-js": "2.6.5",
