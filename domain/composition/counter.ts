@@ -1,12 +1,21 @@
 import { reactive } from '@vue/composition-api'
 import container from '@/di_container/tsyringe.config'
 import { SampleUseCase } from '@/domain/use_case'
+import { Sample } from '@/domain/model'
+
+type CounterState = {
+  count: number
+  sample: string
+  samples?: Sample[]
+}
 
 export default function counterStore() {
-  const state = reactive({
+  const counterState: CounterState = {
     count: 0,
-    samples: ''
-  })
+    sample: '',
+    samples: []
+  }
+  const state = reactive(counterState)
 
   return {
     get count() {
@@ -17,13 +26,27 @@ export default function counterStore() {
       return state.count * 2
     },
 
+    get sample() {
+      return state.sample
+    },
+
     get samples() {
       return state.samples
     },
 
-    loadSamples() {
+    loadSample() {
       const useCase = container.resolve<SampleUseCase>('SampleUseCase')
-      state.samples = useCase.loadSample()
+      state.sample = useCase.loadSample()
+    },
+
+    async loadSamples() {
+      const useCase = container.resolve<SampleUseCase>('SampleUseCase')
+      state.samples = await useCase.loadSamples()
+    },
+
+    async saveSample() {
+      const useCase = container.resolve<SampleUseCase>('SampleUseCase')
+      await useCase.saveSample()
     },
 
     threeCount() {

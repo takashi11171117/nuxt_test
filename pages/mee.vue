@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import { createComponent, onMounted, ref } from '@vue/composition-api'
+import { defineComponent, onMounted, ref } from '@vue/composition-api'
 import usersRepository from '~/repositories/mee_api/usersRepository.js'
 
-export default createComponent({
+export default defineComponent({
   setup(props, { root }) {
     console.log(props, root)
     const users = ref({})

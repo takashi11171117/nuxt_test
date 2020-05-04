@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import { createComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 
 const fetchStatus = async (store) => {
   await store.dispatch('status/fetchServerInfo')
 }
 
-export default createComponent({
+export default defineComponent({
   props: {
     propHello: {
       type: String
