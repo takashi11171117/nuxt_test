@@ -45,8 +45,29 @@ const nuxtConfig: Configuration = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    'nuxt-i18n'
   ],
+  i18n: {
+    locales: [
+      {
+        code: 'ja',
+        iso: 'ja-JP',
+        name: '日本語',
+        file: 'ja-JP.js'
+      },
+    ],
+    defaultLocale: 'ja',
+    strategy: 'prefix_and_default',
+    detectBrowserLanguage: {
+      useCookie: true
+    },
+    lazy: true,
+    langDir: 'common/i18n/',
+    vueI18n: {
+      fallbackLocale: 'ja'
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

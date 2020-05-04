@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>
+      <p>{{ $t('welcome') }}</p>
       <p>count:{{ count }}</p>
       <button @click="increment">Count Up</button>
       <button @click="decrement">Count Down</button>
