@@ -1,2 +1,3 @@
 import { SampleRepository } from './SampleRepository'
-export { SampleRepository }
+import { LocalDatabaseRepository } from './LocalDatabaseRepository'
+export { SampleRepository, LocalDatabaseRepository }

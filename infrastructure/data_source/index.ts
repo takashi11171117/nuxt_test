@@ -1,2 +1,3 @@
 import { SampleDataSource } from './SampleDataSource'
-export { SampleDataSource }
+import { LocalDatabaseDataSource } from './LocalDatabaseDataSource'
+export { SampleDataSource, LocalDatabaseDataSource }
