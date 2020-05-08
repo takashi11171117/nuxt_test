@@ -1,23 +1,24 @@
 <template>
   <div id="status">
-    <button id="get-status" type="is-primary" @click="fetchStatus(store)">
+    <button
+      id="get-status"
+      type="is-primary"
+      @click="setServerInfo({ status: 'one', version: 'two' })"
+    >
       Get Status NOW
     </button>
     <p>
-      ServerStatus: <b>{{ store.getters['status/getStatus'] }}</b>
+      ServerStatus: <b>{{ status }}</b>
     </p>
     <p>
-      ServerVersion: <b>{{ store.getters['status/getVersion'] }}</b>
+      ServerVersion: <b>{{ version }}</b>
     </p>
   </div>
 </template>
 
-<script>
-import { defineComponent } from '@vue/composition-api'
-
-const fetchStatus = async (store) => {
-  await store.dispatch('status/fetchServerInfo')
-}
+<script lang="ts">
+import { defineComponent, computed } from '@vue/composition-api'
+import { statusStore } from '@/store'
 
 export default defineComponent({
   props: {
@@ -25,17 +26,14 @@ export default defineComponent({
       type: String
     }
   },
-  setup(props, { root }) {
-    const store = root.$store
-
-    fetch(async () => {
-      console.log('aaaa')
-      await fetchStatus(store)
-    })
+  setup() {
+    const status = computed(() => statusStore.status)
+    const version = computed(() => statusStore.version)
 
     return {
-      fetchStatus,
-      store
+      status,
+      version,
+      setServerInfo: statusStore.setServerInfo
     }
   }
 })
