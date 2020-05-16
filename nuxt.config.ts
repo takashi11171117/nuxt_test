@@ -42,12 +42,15 @@ const nuxtConfig: Configuration = {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
     '@nuxtjs/vuetify',
+    '@nuxtjs/style-resources',
     'nuxt-i18n'
   ],
+  styleResources: {
+    sass: ['@/assets/sass/variables.sass', '@/assets/sass/main.sass']
+  },
   i18n: {
     locales: [
       {
@@ -55,7 +58,7 @@ const nuxtConfig: Configuration = {
         iso: 'ja-JP',
         name: '日本語',
         file: 'ja-JP.js'
-      },
+      }
     ],
     defaultLocale: 'ja',
     strategy: 'prefix_and_default',
@@ -77,13 +80,8 @@ const nuxtConfig: Configuration = {
     port: 9100
   },
   vuetify: {
-    theme: {
-      dark: false,
-      primary: '#3f51b5',
-      secondary: '#b0bec5',
-      accent: '#8c9eff',
-      error: '#b71c1c'
-    }
+    customVariables: ['@/assets/sass/variables.sass'],
+    treeShake: true
   },
   typescript: {
     typeCheck: true,

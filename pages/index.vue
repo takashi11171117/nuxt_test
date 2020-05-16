@@ -24,11 +24,22 @@
         sample
       </n-link>
     </div>
+    <template>
+      <v-container>
+        <v-row justify="center">
+          <v-col cols="12">
+            <v-card>
+              <v-card-title><h1>Hello, Vuetify!</h1></v-card-title>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </template>
+    <p class="reserve__main">ああああああ</p>
   </div>
 </template>
 
 <script lang="ts">
-import 'vuetify/dist/vuetify.min.css'
 import { ref, computed, watch, onMounted } from '@vue/composition-api'
 
 export default {
@@ -61,3 +72,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+h1
+  font-size: map-get($h1, size)
+</style>
