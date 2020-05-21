@@ -1910,6 +1910,11 @@
   dependencies:
     "@types/webpack" "*"
 
+"@types/p5@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@types/p5/-/p5-0.9.1.tgz#920c6cd6ee30b5d9e5cc04cb9b11bb762c333bc5"
+  integrity sha512-4glOKdqdBiRWDFZwi/MjHudPV2U4t2L4fTTSacGapfFxyNXzZcAshAjqmrJkCIZcFlhRBEAL7AM95xRDMfrIwg==
+
 "@types/pug@^2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@types/pug/-/pug-2.0.4.tgz#8772fcd0418e3cd2cc171555d73007415051f4b2"
@@ -8058,6 +8063,11 @@ p-try@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
+
+p5@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/p5/-/p5-1.0.0.tgz#d27c77c1c11450ede27af4614a5d24470ffab0c4"
+  integrity sha512-SYYc6NSHA/mMoF00SdI39FmhifMWl0B74/Bg3T793v+KOAWgXsBfr7snv9cjHFqpcmjtJMuZSOoA55qAETCu1w==
 
 pako@~1.0.5:
   version "1.0.11"
